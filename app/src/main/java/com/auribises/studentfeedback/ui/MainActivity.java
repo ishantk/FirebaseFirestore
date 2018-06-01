@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +19,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -28,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     FirebaseAuth auth;
     FirebaseFirestore firestore;
+
+    ArrayList<User> userList;
 
     void initViews(){
         eTxtName = findViewById(R.id.editTextName);
@@ -101,6 +109,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });*/
 
+    }
+
+    void getUsers(){
+
+        firestore.collection("users").get().addOnCompleteListener(this,
+                new OnCompleteListener<QuerySnapshot>() {
+
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if(task.isComplete()){
+
+                    userList = new ArrayList<>();
+
+                    for(QueryDocumentSnapshot snapshot : task.getResult()){
+                        User user = snapshot.toObject(User.class);
+                        Log.i("User",user.name+" - "+user.email);
+                        userList.add(user);
+                    }
+
+                    // Show these users in a listview/recyclerview
+                }
+            }
+        });
     }
 
     void registerUser(){
