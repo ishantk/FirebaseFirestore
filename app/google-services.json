@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "912705241956",
+    "firebase_url": "https://encephalon-5ca00.firebaseio.com",
+    "project_id": "encephalon-5ca00",
+    "storage_bucket": "encephalon-5ca00.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:912705241956:android:e1cbe5ef433b09d7",
+        "android_client_info": {
+          "package_name": "com.auribises.studentfeedback"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "912705241956-i27ajos86mdm93qviuoj3gb0ec1jjs21.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "912705241956-i27ajos86mdm93qviuoj3gb0ec1jjs21.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ1uaV4EDn3zlytS3it1oPMvE_UpgJUwo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
