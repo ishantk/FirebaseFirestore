@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     User user;
 
     FirebaseAuth auth;
+
     FirebaseFirestore firestore;
 
     ArrayList<User> userList;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSignIn.setOnClickListener(this);
 
         auth = FirebaseAuth.getInstance();
+
         firestore = FirebaseFirestore.getInstance();
     }
 
@@ -145,6 +147,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         }
                     }
                 });
+
 
     }
 
